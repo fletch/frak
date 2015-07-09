@@ -4,14 +4,14 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :jar-exclusions [#"(?:\.(?:cljx|sw[onp])|cli\.cljs?)"]
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-2156"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "0.0-3308"]
                  [org.clojure/tools.cli "0.3.1"]]
-  :plugins [[lein-cljsbuild "1.0.2"]
-            [com.keminglabs/cljx "0.3.0"]]
+  :plugins [[lein-cljsbuild "1.0.3"]
+            [com.keminglabs/cljx "0.3.0" :exclusions [org.clojure/clojure]]]
   :source-paths ["src/cljx"]
-  :profiles {:dev {:dependencies [[criterium "0.4.1"]
-                                  [com.keminglabs/cljx "0.3.0"]]
+  :profiles {:dev {:dependencies [[criterium "0.4.3"]
+                                  [com.keminglabs/cljx "0.6.0"]]
                    :repl-options {:nrepl-middleware [cljx.repl-middleware/wrap-cljx]}
                    :hooks [cljx.hooks]}}
   :cljx {:builds [{:source-paths ["src/cljx"]
